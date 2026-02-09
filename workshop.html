@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop - Verve</title>
+    <link rel="icon" href="circle_icon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="profilemenu.css">
+    
+    <script src="currentpage.js"></script>
+    <script src="profilemodal.js"></script>
+
+    <style>
+        .modal{
+            display: none; 
+            position: fixed; 
+            z-index: 4; 
+            right: 0;
+            top: 0;
+            width: 100vw; 
+            height: 100vh; 
+            overflow: auto; 
+            background: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navgation bar -->
+    <nav>
+        <div class="logo-and-name">
+            <img id="logo-img" src="nobg_logo_purple-blue.png">
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn secondary-btn" onclick="window.location.href='homepage.html'">Home</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='event.html'">Event</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='workshop.html'">Workshop</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='gallery.html'">Gallery</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='community.html'">Community</button>
+            <button class="nav-btn secondary-btn" onclick="">Search</button>
+            <button class="nav-btn secondary-btn" onclick="openModal('profilepopupModal')">Profile</button>
+        </div>
+    </nav>
+
+    <!-- main content -->
+    <div class="main">
+
+        <!-- workshops -->
+        <div class="workshop">
+            <h1 class="section-heading-medium">Workshop</h1>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-body-img">
+                        <img class="card-img" src="cybersecurity.webp"/>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-body-heading">Cybersecurity Basics</h3>
+                        <p class="card-body-text">Aug 21, 2025 · 49 joins</p>
+                        <p class="card-body-text">Explore ethical hacking, password security, and network protection.</p>
+                        <button class="nav-btn secondary-btn" onclick="window.location.href='dashboard.html'">Details</button>
+                        <button class="nav-btn primary-btn"  onclick="bookWorkshop('Cybersecurity Basics')">Book</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-body-img">
+                        <img class="card-img" src="photography.jpeg"/>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-body-heading">Photography Basics</h3>
+                        <p class="card-body-text">Sep 6, 2025 · 26 joins</p>
+                        <p class="card-body-text">Learn camera settings, framing, and editing tips to capture stunning photos.</p>
+                        <button class="nav-btn secondary-btn">Details</button>
+                        <button class="nav-btn primary-btn"  onclick="bookWorkshop('Photography Basics')">Book</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-body-img">
+                        <img class="card-img" src="gitandgithub.jpg"/>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-body-heading">Git and Github Bootcamp</h3>
+                        <p class="card-body-text">Sep 13, 2025 · 73 joins</p>
+                        <p class="card-body-text">Version control in tech landscape, featuring Git and Github.</p>
+                        <button class="nav-btn secondary-btn">Details</button>
+                        <button class="nav-btn primary-btn" onclick="bookWorkshop('Git and Github Bootcamp')">Book</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-body-img">
+                        <img class="card-img" src="survivalskills.avif"/>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-body-heading">Survival Skills Workshop</h3>
+                        <p class="card-body-text">Sep 20, 2025 · 88 joins</p>
+                        <p class="card-body-text">Discover essentatial survival skills. Great for adventure lovers.</p>
+                        <button class="nav-btn secondary-btn">Details</button>
+                        <button class="nav-btn primary-btn" onclick="bookWorkshop('Survival Skills Workshop')">Book</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body-img">
+                        <img class="card-img" src="digitalart.jpg"/>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-body-heading">Digital Art & Animation Workshop</h3>
+                        <p class="card-body-text">Sep 27, 2025 · 59 joins</p>
+                        <p class="card-body-text">Learn digital sketching, character design, and basic animation.</p>
+                        <button class="nav-btn secondary-btn">Details</button>
+                        <button class="nav-btn primary-btn" onclick="bookWorkshop('Digital Art & Animation Workshop')">Book</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body-img">
+                        <img class="card-img" src="blockchain.avif"/>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-body-heading">Blockchain Workshop</h3>
+                        <p class="card-body-text">Oct 4, 2025 · 82 joins</p>
+                        <p class="card-body-text">Understand blockchain, smart contracts, and digital assets.</p>
+                        <button class="nav-btn secondary-btn">Details</button>
+                        <button class="nav-btn primary-btn" onclick="bookWorkshop('Blockchain Workshop')">Book</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body-img">
+                        <img class="card-img" src="arvr.jpg"/>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-body-heading">AR/VR Experience Workshop</h3>
+                        <p class="card-body-text">Oct 11, 2025 · 58 joins</p>
+                        <p class="card-body-text">Explore virtual and augmented reality development with practical demos.</p>
+                        <button class="nav-btn secondary-btn">Details</button>
+                        <button class="nav-btn primary-btn" onclick="bookWorkshop('AR/VR Experience Workshop')">Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- footer section -->
+    <div class="footer">
+        <div class="footer-section">
+            <div class="footerupleft">
+                <p class="footer-heading-small">Art and Recreation Organization</p>
+                <p>Techspire Student Organization</p>
+            </div>
+
+            <div class="footer-up-right">
+                <p class="footer-heading-small">Follow us.</p>
+                <img id="x-icon" src="x.svg">
+            </div>
+        </div>
+
+        <hr class="footer-hr">
+
+        <div class="footer-section">
+            <div class="footer-down-left">
+                <p>Copyright © 2025 Verve. All rights reserved.</p>
+                <p><a class="footer-link" href="privacypolicy.html">Privacy Policy</a> | <a class="footer-link" href="termsofuse.html">Terms of Use</a> | <a class="footer-link" href="sitemap.html">Site Map</a></p>
+            </div>
+
+            <div class="footer-down-right">
+                <p>Nepal</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Profile Popup Menu -->
+    <div id="profilepopupModal" class="modal">
+        <div class="profilepopup">
+        <div class="profilepopup-user" onclick="window.location.href='settings.html'">
+            <p id="profilepopup-user-name">Bhimsen</p>
+            <p id="profilepopup-user-email">bhimsen.basnets24@cps.edu.np</p>
+        </div>
+        <hr>
+        <div class="profilepopup-events">
+            <p id="profilepopup-events1" onclick="window.location.href='dashboard.html'">My Events</p>
+            <p id="profilepopup-events2" onclick="window.location.href='dashboard.html'">My Workshops</p>
+        </div>
+        <hr>
+        <div class="profilepopup-settings">
+            <p onclick="window.location.href='settings.html'">Settings</p>
+        </div>
+        <hr>
+        <div class="profilepopup-theme">
+            <p id="theme-toggle">Toggle Theme</p>
+        </div>
+        <hr>
+        <div class="profilepopup-misc">
+            <p id="profilepopup-misc1" onclick="window.location.href='support.html'">Support</p>
+            <p id="profilepopup-misc2" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=example@example.com&su=Contact%20Us&body=Hello,%20I%20would%20like%20to%20contact%20you%20regarding...', '_blank')">Contact</p>
+            <p id="profilepopup-misc3" onclick="window.location.href='landing.html'">Log out</p>
+        </div>
+        <hr>
+        <div class="profilepopup-footer">
+            <p>Privacy</p>
+            <p>Terms</p>
+            <p>Copyright</p>
+        </div>
+    </div>
+
+
+    <script src="auth.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

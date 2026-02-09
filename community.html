@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Verve</title>
+    <link rel="icon" href="circle_icon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="profilemenu.css">
+
+    <script src="currentpage.js"></script>
+    <script src="profilemodal.js"></script>
+
+    <style>
+        .modal{
+            display: none; 
+            position: fixed; 
+            z-index: 4; 
+            right: 0;
+            top: 0;
+            width: 100vw; 
+            height: 100vh; 
+            overflow: auto; 
+            background: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+  <!-- navgation bar -->
+    <nav>
+        <div class="logo-and-name">
+            <img id="logo-img" src="nobg_logo_purple-blue.png">
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn secondary-btn" onclick="window.location.href='homepage.html'">Home</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='event.html'">Event</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='workshop.html'">Workshop</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='gallery.html'">Gallery</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='community.html'">Community</button>
+            <button class="nav-btn secondary-btn" onclick="">Search</button>
+            <button class="nav-btn secondary-btn" onclick="openModal('profilepopupModal')">Profile</button>
+        </div>
+    </nav>
+
+
+  <!-- main content -->
+  <div class="main">
+
+        <!-- communty -->
+        <div class="community">
+          <h1 class="section-heading-medium">Community</h1>
+
+
+            <!-- Example Post -->
+            <div class="post">
+              <div class="profile-pic" style="background:#6c5ce7;">
+                B
+              </div>
+
+              <div class="post-content">
+                <div class="post-header">
+                  <span>bibek22 · 2h ago</span>
+              </div>
+
+              <div class="post-text">
+                Does anyone have ideas for the next art exhibition theme?
+              </div>
+
+              <div class="vote-section">
+                <button class="vote-btn upvote">▲</button>
+                <span class="upvote-count">12</span>
+                <button class="vote-btn downvote">▼</button>
+                <span class="downvote-count">0</span>
+              </div>
+          </div>
+        </div>
+
+
+      <!-- Another Post -->
+      <div class="post">
+        <div class="profile-pic" style="background:#06c61c;">B</div>
+        <div class="post-content">
+          <div class="post-header">
+            <span>bhimsen01 · 3h ago</span>
+          </div>
+          <div class="post-text">
+            It was just a few tips and tricks in cybersecurity bootcamp.
+          </div>
+          <div class="vote-section">
+            <button class="vote-btn upvote">▲</button>
+            <span class="upvote-count">8</span>
+            <button class="vote-btn downvote">▼</button>
+            <span class="downvote-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Another Post -->
+      <div class="post">
+        <div class="profile-pic" style="background:#008ab8;">S</div>
+        <div class="post-content">
+          <div class="post-header">
+            <span>shishir65 · 5h ago</span>
+          </div>
+          <div class="post-text">
+            Our workshop on digital illustrations was amazing! Thanks everyone!
+          </div>
+          <div class="vote-section">
+            <button class="vote-btn upvote">▲</button>
+            <span class="upvote-count">8</span>
+            <button class="vote-btn downvote">▼</button>
+            <span class="downvote-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Another Post -->
+      <div class="post">
+        <div class="profile-pic" style="background:#b8b200;">R</div>
+        <div class="post-content">
+          <div class="post-header">
+            <span>raj69 · 5h ago</span>
+          </div>
+          <div class="post-text">
+            There should be a trek event too. ABC is a good idea. Who agrees?
+          </div>
+          <div class="vote-section">
+            <button class="vote-btn upvote">▲</button>
+            <span class="upvote-count">8</span>
+            <button class="vote-btn downvote">▼</button>
+            <span class="downvote-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Another Post -->
+      <div class="post">
+        <div class="profile-pic" style="background:#af00b8;">D</div>
+        <div class="post-content">
+          <div class="post-header">
+            <span>dipankar76 · 10h ago</span>
+          </div>
+          <div class="post-text">
+            Are there no good dancers to dance? Boring!!!
+          </div>
+          <div class="vote-section">
+            <button class="vote-btn upvote">▲</button>
+            <span class="upvote-count">8</span>
+            <button class="vote-btn downvote">▼</button>
+            <span class="downvote-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Box -->
+
+      <div class="post-div">
+      <div class="post-box">
+        <textarea maxlength="280" placeholder="Enter text..."></textarea>
+        <div class="char-counter">0 / 280</div>
+        <button id="post-btn">Post</button>
+      </div>
+    </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- footer section -->
+    <div class="footer">
+        <div class="footer-section">
+            <div class="footerupleft">
+                <p class="footer-heading-small">Art and Recreation Organization</p>
+                <p>Techspire Student Organization</p>
+            </div>
+
+            <div class="footer-up-right">
+                <p class="footer-heading-small">Follow us.</p>
+                <img id="x-icon" src="x.svg">
+            </div>
+        </div>
+
+        <hr class="footer-hr">
+
+        <div class="footer-section">
+            <div class="footer-down-left">
+                <p>Copyright © 2025 Verve. All rights reserved.</p>
+                <p><a class="footer-link" href="privacypolicy.html">Privacy Policy</a> | <a class="footer-link" href="termsofuse.html">Terms of Use</a> | <a class="footer-link" href="sitemap.html">Site Map</a></p>
+            </div>
+
+            <div class="footer-down-right">
+                <p>Nepal</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<script>
+  const textarea = document.querySelector(".post-box textarea");
+  const counter = document.querySelector(".char-counter");
+  const postBtn = document.querySelector("#post-btn"); 
+  const container = document.querySelector(".community");
+
+  // live character counter
+  textarea.addEventListener("input", () => {
+    counter.textContent = `${textarea.value.length} / 280`;
+  });
+
+  // setup voting system for a given post
+  function setupVoting(post) {
+    let upvotes = parseInt(post.querySelector(".upvote-count").textContent) || 0;
+    let downvotes = parseInt(post.querySelector(".downvote-count").textContent) || 0;
+
+    const upvoteBtn = post.querySelector(".upvote");
+    const downvoteBtn = post.querySelector(".downvote");
+    const upvoteSpan = post.querySelector(".upvote-count");
+    const downvoteSpan = post.querySelector(".downvote-count");
+
+    upvoteBtn.addEventListener("click", () => {
+      upvotes++;
+      upvoteSpan.textContent = upvotes;
+    });
+
+    downvoteBtn.addEventListener("click", () => {
+      downvotes++;
+      downvoteSpan.textContent = downvotes;
+    });
+  }
+
+  // initialize voting for all existing posts
+  document.querySelectorAll(".post").forEach(setupVoting);
+
+  // add post function
+  function addPost() {
+    const text = textarea.value.trim();
+    if (!text) return;
+
+    const post = document.createElement("div");
+    post.className = "post";
+    post.innerHTML = `
+      <div class="profile-pic" style="background:${randomColor()};">U</div>
+      <div class="post-content">
+        <div class="post-header">
+          <span>@you · just now</span>
+        </div>
+        <div class="post-text">${text}</div>
+        <div class="vote-section">
+          <button class="vote-btn upvote">▲</button>
+          <span class="upvote-count">0</span>
+          <button class="vote-btn downvote">▼</button>
+          <span class="downvote-count">0</span>
+        </div>
+      </div>
+    `;
+
+    // insert new post at the very top 
+    const firstPost = container.querySelector(".post");
+    if (firstPost) {
+      container.insertBefore(post, firstPost);
+    } else {
+      container.insertBefore(post, document.querySelector(".post-div"));
+    }
+
+    // enable voting for this new post
+    setupVoting(post);
+
+    // reset textarea + counter
+    textarea.value = "";
+    counter.textContent = "0 / 280";
+  }
+
+  // attach listener to button
+  postBtn.addEventListener("click", addPost);
+
+  // random color generator for profile icon
+  function randomColor() {
+    const colors = ["#6C5CE7", "#00CEC9", "#0984E3", "#E17055", "#2ECC71"];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+</script>
+
+
+
+
+
+
+<!-- Profile Popup Menu -->
+    <div id="profilepopupModal" class="modal">
+        <div class="profilepopup">
+        <div class="profilepopup-user" onclick="window.location.href='settings.html'">
+            <p id="profilepopup-user-name">Bhimsen</p>
+            <p id="profilepopup-user-email">bhimsen.basnets24@cps.edu.np</p>
+        </div>
+        <hr>
+        <div class="profilepopup-events">
+            <p id="profilepopup-events1" onclick="window.location.href='dashboard.html'">My Events</p>
+            <p id="profilepopup-events2" onclick="window.location.href='dashboard.html'">My Workshops</p>
+        </div>
+        <hr>
+        <div class="profilepopup-settings">
+            <p onclick="window.location.href='settings.html'">Settings</p>
+        </div>
+        <hr>
+        <div class="profilepopup-theme">
+            <p id="theme-toggle">Toggle Theme</p>
+        </div>
+        <hr>
+        <div class="profilepopup-misc">
+            <p id="profilepopup-misc1" onclick="window.location.href='support.html'">Support</p>
+            <p id="profilepopup-misc2" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=example@example.com&su=Contact%20Us&body=Hello,%20I%20would%20like%20to%20contact%20you%20regarding...', '_blank')">Contact</p>
+            <p id="profilepopup-misc3" onclick="window.location.href='index.html'">Log out</p>
+        </div>
+        <hr>
+        <div class="profilepopup-footer">
+            <p>Privacy</p>
+            <p>Terms</p>
+            <p>Copyright</p>
+        </div>
+    </div>
+    <script src="theme.js"></script>
+</body>
+</html>

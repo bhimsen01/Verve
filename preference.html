@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferences - Settings - Verve</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings.css">
+  <link rel="icon" href="circle_icon.png" type="image/png">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo-main" onclick="window.location.href='homepage.html'"><div class="logo"><img id="logo-img" src="nobg_logo_purple-blue.png"></div>
+    <div class="logo-secondary"><p>Verve</p></div>
+  </div>
+    <button class="backtohome" onclick="window.location.href='homepage.html'">Back to Home</button>
+  </div>
+
+
+  <div class="body">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="nav">
+      <a href="settings.html">Account</a>
+      <a href="preference.html" class="active">Preferences</a>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="section">
+      <h3>Email Preferences</h3>
+
+      <!-- Each row like Account details -->
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">Recent Events</span>
+          <span class="detail-value">Receive email notifications for upcoming events.</span>
+        </div>
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="pref-events">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">New Workshops</span>
+          <span class="detail-value">Receive email notifications for new workshops.</span>
+        </div>
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="pref-workshops">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">Announcements</span>
+          <span class="detail-value">Receive email notifications for recent announcements.</span>
+        </div>
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="pref-announcements">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">Changelogs</span>
+          <span class="detail-value">Receive updates about new features and improvements.</span>
+        </div>
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="pref-changelogs">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+   
+  </div>
+</div>
+<script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Map - Verve</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sitemap.css">
+  <link rel="icon" href="circle_icon.png" type="image/png">
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo-main" onclick="window.location.href='homepage.html'"><div class="logo"><img id="logo-img" src="nobg_logo_purple-blue.png"></div>
+    <div class="logo-secondary"><p>Verve</p></div>
+  </div>
+    <div class="backtohome-contactus">
+      <button class="backtohome" onclick="window.location.href='homepage.html'">Back to Home</button>
+
+      <button class="contactus" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=example@example.com&su=Contact%20Us&body=Hello,%20I%20would%20like%20to%20contact%20you%20regarding...', '_blank')">Contact Us</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="sitemap-container">
+    <h1>Verve Site Map</h1>
+
+    <div class="sitemap-grid">
+
+
+
+        <!-- Landingpage -->
+      <div class="sitemap-card">
+        <h2><a href="landing.html">Landing Page</a></h2>
+        <ul class="details">
+          <li><a href="landing.html">Guide to Verve</a></li>
+          <li><a href="membershp.html">About Membership</a></li>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="termsofuse.html">Terms of Use</a></li>
+          <li><a href="sitemap.html">Site Map</a></li>
+        </ul>
+      </div>
+
+      <!-- Homepage -->
+      <div class="sitemap-card">
+        <h2><a href="homepage.html">Home</a></h2>
+        <ul class="details">
+          <li><a href="homepage.html">Get Announcements</a></li>
+          <li><a href="homepage.html">Book Events</a></li>
+          <li><a href="homepage.html">Join Workshops</a></li>
+          <li><a href="homepage.html">Apply Membership</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Events -->
+      <div class="sitemap-card">
+        <h2><a href="event.html">Events</a></h2>
+        <ul class="details">
+          <li><a href="event.html">Browse Events</a></li>
+          <li><a href="event.html">Book Events</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Workshops -->
+      <div class="sitemap-card">
+        <h2><a href="workshop.html"> Workshops</a></h2>
+        <ul >
+          <li><a href="workshop.html">Browse Workshops</a></li>
+          <li><a href="workshop.html">Join Workshops</a></li>
+        </ul>
+      </div>
+
+      <!-- Gallery -->
+      <div class="sitemap-card">
+        <h2><a href="gallery.html">Gallery</a></h2>
+        <ul class="details">
+          <li><a href="gallery.html">Browse Photos</a></li>
+          <li><a href="gallery.html">Browse Videos</a></li>
+          <li><a href="gallery.html">Art Showcase</a></li>
+        </ul>
+      </div>
+
+      <!-- Community -->
+      <div class="sitemap-card">
+        <h2><a href="community.html">Community</a></h2>
+        <ul class="details">
+          <li><a href="community.html">Read Discussions</a></li>
+          <li><a href="community.html">Start Discussionss</a></li>
+        </ul>
+      </div>
+
+      <!-- Profile -->
+      <div class="sitemap-card">
+        <h2><a href="homepage.html">Profile</a></h2>
+        <ul class="details">
+          <li><a href="account.html">Account</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="settings.html">Account Settings</a></li>
+          <li><a href="preference.html">Preferences Settings</a></li>
+        </ul>
+      </div>
+
+
+
+
+      <!-- Support -->
+      <div class="sitemap-card">
+        <h2><a href="support.html">Support</a></h2>
+        <ul class="details">
+          <li><a href="support.html">Browse Resources</a></li>
+          <li><a href="support.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+
+      <div class="sitemap-card">
+        <h2> Membership</h2>
+        <ul class="details">
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="membership.html">About Membership</a></li>
+          <li><a href="membership.html">Apply Membership</a></li>
+          <li><a href="membership.html">Cancel Membership</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+<!-- footer section -->
+    <div class="footer">
+        <div class="footer-section">
+            <div class="footerupleft">
+                <p class="footer-heading-small">Art and Recreation Organization</p>
+                <p>Techspire Student Organization</p>
+            </div>
+
+            <div class="footer-up-right">
+                <p class="footer-heading-small">Follow us.</p>
+                <img id="x-icon" src="x.svg">
+            </div>
+        </div>
+
+        <hr class="footer-hr">
+
+        <div class="footer-section">
+            <div class="footer-down-left">
+                <p>Copyright © 2025 Verve. All rights reserved.</p>
+                <p><a class="footer-link" href="privacypolicy.html">Privacy Policy</a> | <a class="footer-link" href="termsofuse.html">Terms of Use</a> | <a class="footer-link" href="sitemap.html">Site Map</a></p>
+            </div>
+
+            <div class="footer-down-right">
+                <p>Nepal</p>
+            </div>
+        </div>
+    </div>
+
+
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ accordion functionality
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other open FAQ items
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card && otherCard.classList.contains('active')) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    card.classList.toggle('active');
+                });
+            });
+    
+
+        });
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>

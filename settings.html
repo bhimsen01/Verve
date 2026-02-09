@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account - Settings - Verve</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings.css">
+  <link rel="icon" href="circle_icon.png" type="image/png">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo-main" onclick="window.location.href='homepage.html'"><div class="logo"><img id="logo-img" src="nobg_logo_purple-blue.png"></div>
+    <div class="logo-secondary"><p>Verve</p></div>
+  </div>
+    <button class="backtohome" onclick="window.location.href='homepage.html'">Back to Home</button>
+  </div>
+
+<div class="body">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="nav">
+      <a href="settings.html" class="active">Account</a>
+      <a href="preference.html">Preferences</a>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="profile">
+      <label for="avatarUpload" class="avatar" id="avatar">
+        <span id="avatarInitial">B</span>
+        <img id="avatarImg" style="display:none;" />
+      </label>
+      <input type="file" id="avatarUpload" accept="image/*" style="display:none;" onchange="uploadAvatar(event)">
+      <div class="username" id="username">bhimsen01</div>
+      <div class="email" id="userEmail">bhimsen.basnets24@cps.edu.np</div>
+    </div>
+    <hr id="settings-account-hr">
+    <div class="section">
+      <h3>Personal details</h3>
+      <!-- Name -->
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">Name</span>
+          <span class="detail-value" id="nameValue">Bhimsen Basnet</span>
+        </div>
+        <div>
+          <span class="detail-actions" onclick="enableEdit('name')">Edit</span>
+        </div>
+      </div>
+      <!-- Email -->
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">Email address</span>
+          <span class="detail-value" id="emailValue">bhimsen.basnets24@cps.edu.np</span>
+        </div>
+        <div>
+          <span class="detail-actions" onclick="enableEdit('email')">Edit</span>
+        </div>
+      </div>
+      <!-- Password -->
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">Password</span>
+          <span class="detail-value" id="passwordValue">........</span>
+        </div>
+        <div>
+          <span class="detail-actions" onclick="enableEdit('password')">Change</span>
+        </div>
+      </div>
+    </div>
+    <hr id="settings-account-hr">
+    <div class="section">
+      <h3>Manage account</h3>
+      <div class="detail-row">
+        <div class="detail-left">
+          <span class="detail-label">Delete account</span>
+          <span class="detail-value" id="nameValue">Permanently delete your Verve account.</span>
+        </div>
+        <div>
+          <span class="delete-btn" onclick="openModal()">Delete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete confirmation modal -->
+  <div class="modal" id="deleteModal">
+    <div class="modal-content">
+      <h3>Are you sure?</h3>
+      <p>This will permanently delete your account and all saved data.</p>
+      <button class="confirm-delete" onclick="deleteAccount()">Delete</button>
+      <button class="cancel-delete" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    // Initialize storage
+    if (!localStorage.getItem("userData")) {
+      localStorage.setItem("userData", JSON.stringify({
+        name: "User2828",
+        email: "menaw15335@litepax.com",
+        password: null,
+        avatar: null
+      }));
+    }
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    if (userData.avatar) {
+      document.getElementById("avatarImg").src = userData.avatar;
+      document.getElementById("avatarImg").style.display = "block";
+      document.getElementById("avatarInitial").style.display = "none";
+    }
+
+    // Edit inline
+    function enableEdit(type) {
+      let valueEl = document.getElementById(type + "Value");
+      let oldValue = valueEl.innerText;
+      valueEl.innerHTML = `
+        <div class="edit-inline">
+          <input class="edit-input" type="${type === 'password' ? 'password' : 'text'}" 
+            id="${type}Input" value="${type === 'password' ? '' : oldValue}">
+          <button class="save-btn" onclick="saveEdit('${type}', '${oldValue}')">Save</button>
+          <button class="cancel-btn" onclick="cancelEdit('${type}', '${oldValue}')">Cancel</button>
+        </div>
+      `;
+    }
+
+    function saveEdit(type, oldValue) {
+      let input = document.getElementById(type + "Input").value;
+      if (input.trim() === "" && type !== "password") {
+        cancelEdit(type, oldValue);
+        return;
+      }
+      let valueEl = document.getElementById(type + "Value");
+      valueEl.innerText = type === "password" ? "********" : input;
+
+      let userData = JSON.parse(localStorage.getItem("userData"));
+
+      if (type === "name") {
+        document.getElementById("username").innerText = input;
+        document.getElementById("avatarInitial").innerText = input.charAt(0).toUpperCase();
+        userData.name = input;
+      }
+      if (type === "email") {
+        document.getElementById("userEmail").innerText = input;
+        userData.email = input;
+      }
+      if (type === "password") {
+        userData.password = input;
+      }
+
+      localStorage.setItem("userData", JSON.stringify(userData));
+    }
+
+    function cancelEdit(type, oldValue) {
+      document.getElementById(type + "Value").innerText = oldValue;
+    }
+
+    // Avatar upload
+    function uploadAvatar(event) {
+      let file = event.target.files[0];
+      if (file) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("avatarImg").src = e.target.result;
+          document.getElementById("avatarImg").style.display = "block";
+          document.getElementById("avatarInitial").style.display = "none";
+
+          let userData = JSON.parse(localStorage.getItem("userData"));
+          userData.avatar = e.target.result;
+          localStorage.setItem("userData", JSON.stringify(userData));
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Modal
+    function openModal() {
+      document.getElementById("deleteModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("deleteModal").style.display = "none";
+    }
+    function deleteAccount() {
+      localStorage.removeItem("userData");
+      document.querySelector(".main").innerHTML = `
+        <div style="text-align:center; margin-top:100px;">
+          <h2>Your account has been deleted</h2>
+          <p>All data has been removed.</p>
+        </div>
+      `;
+      closeModal();
+    }
+  </script>
+  <script src="theme.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verve</title>
+    <link rel="icon" href="circle_icon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="signin.css">
+
+    <script src="modal.js"></script>
+
+    <style>
+        .modal{
+            display: none; 
+            position: fixed; 
+            z-index: 4; 
+            left: 0;
+            top: 0;
+            width: 100vw; 
+            height: 100vh; 
+            overflow: auto; 
+            backdrop-filter: blur(10px); 
+            background-color: rgb(232, 232, 232, 0.6);
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navgation bar -->
+    <nav>
+        <div class="logo-and-name">
+            <img id="logo-img" src="nobg_logo_purple-blue.png">
+            <p class="logo-name">Verve</p>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn secondary-btn" onclick="openModal('loginModal')">Log in</button>
+            <button class="nav-btn primary-btn" onclick="openModal('signupModal')">Sign up</button>
+        </div>
+    </nav>
+
+
+    <!-- main content -->
+    <div class="main">
+        <div class="desc">
+            <p class="slogan">Art and Recreation Organization.</p>
+            <p class="slogan-sub">Where creativity meets community.<br>Join workshops, events, and projects that celebrate art and wellbeing.</p>
+        </div>
+
+
+        <!-- guide section -->
+        <div class="guide">
+            <div class="guide-card">
+                <div id="guide-card-desc">
+                    <p class="grid-card-heading">A guide to Verve.</p>
+                    <p class="card-tertiary-btn">Watch the video ⊜</p>
+                </div>
+
+                <div class="guide-card-img">
+                    <img id="guidecardimg" src="video.png">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- explore sectoin -->
+        <div class="explore">
+            <div class="explore-card">
+                <p class="section-heading-large">Explore workshops.</p>
+            </div>
+            <div class="highlight">
+                <img class ="highlight-img" src="exploreworkshops.png">
+            </div>
+        </div>
+
+        <div class="explore">
+            <div class="explore-card">
+                <p class="section-heading-large">Explore events.</p>
+            </div>
+            <div class="highlight">
+                <img class ="highlight-img" src="exploreevents.png">
+            </div>
+        </div>
+
+        <div class="explore">
+            <div class="explore-card">
+                <p class="section-heading-large">Explore resources.</p>
+            </div>
+            <div class="highlight">
+                <img class ="highlight-img" src="exploreresources.png">
+            </div>
+        </div>
+
+
+        <!-- be a member section -->
+        <div class="beamember">
+            <div class="beamember-card">
+                <div class="beamember-card-left">
+                    <p class="beamember-card-heading">Be a member.</p>
+                    <a href="membership.html"><button class="card-tertiary-btn">Learn more ↗</button></a>
+                </div>
+
+                <div class="beamember-card-right">
+                    <img class="beamember-card-img" src="membership3.jpg">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- footer section -->
+    <div class="footer">
+        <div class="footer-section">
+            <div class="footerupleft">
+                <p class="footer-heading-small">Art and Recreation Organization</p>
+                <p>Techspire Student Organization</p>
+            </div>
+
+            <div class="footer-up-right">
+                <p class="footer-heading-small">Follow us.</p>
+                <img id="x-icon" src="x.svg">
+            </div>
+        </div>
+
+        <hr class="footer-hr">
+
+        <div class="footer-section">
+            <div class="footer-down-left">
+                <p>Copyright © 2025 Verve. All rights reserved.</p>
+                <p><a class="footer-link" href="privacypolicy.html">Privacy Policy</a> | <a class="footer-link" href="termsofuse.html">Terms of Use</a> | <a class="footer-link" href="sitemap.html">Site Map</a></p>
+            </div>
+
+            <div class="footer-down-right">
+                <p>Nepal</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Sign up form -->
+    <div id="signupModal" class="modal">
+        <form class="modal-content" onsubmit="return false;">
+        <div class="form-avatar">
+            <img class="avatar-img" src="icon.png">
+        </div>
+        <p class="form-heading">Create Your Verve Account</p>
+
+        <p class="form-sub-heading">Already have an account?
+            <button class="form-tertiary-btn" onclick="closeModal('signupModal'); openModal('loginModal');">Log in ↗</button>
+        </p>
+
+        <hr class="form-hr">
+
+        <div class="input-container">
+            <div class="input-name">
+                <div class="fname">
+                    <label class="label" for="fname">First Name</label>
+                    <input type="text" placeholder="first name" name="fname" required>
+                </div>
+
+                <div class="lname">
+                    <label class="label" for="lname">Last Name</label>
+                    <input type="text" placeholder="last name" name="lname" required>
+                </div>
+            </div>
+
+            <div class="npnum">
+                <label class="label" for="npnumber">APU Number</label>
+                <input type="text" placeholder="np code" name="npnumber" required>
+            </div>
+
+            <hr class="form-hr">
+
+            <div class="emailpass">
+                <label class="label" for="email">Email</label>
+                <input type="email" placeholder="example@cps.edu.np" name="email" required>
+
+                <label class="label" for="pwd">Password</label>
+                <input type="password" placeholder="password" name="password" required>
+            </div>
+
+            <hr class="form-hr">
+
+            <div class="form-action-btn">
+                <button type="button" class="form-secondary-btn" onclick="closeModal('signupModal')">Cancel</button>
+                <button type="submit" class="form-primary-btn" onclick="signUp(
+          this.form.email.value,
+          this.form.password.value
+        )">Sign Up</button>
+            </div>
+               
+        </div>
+    </form>
+
+    </div>
+
+    <!-- Log in form -->
+     <div id="loginModal" class="modal">
+        <form onsubmit="return false;">
+        <div class="form-avatar">
+            <img class="avatar-img" src="icon.png">
+        </div>
+        <p class="form-heading">Log in with Verve Account</p>
+
+        <hr class="form-hr">
+
+        <div class="input-container">
+            <div class="emailpass">
+                <label class="label" for="email">Email</label>
+                <input type="email" placeholder="example@cps.edu.np" name="email" required>
+
+                <label class="label" for="pwd">Password</label>
+                <input type="password" placeholder="password" name="password" required>
+            </div>
+
+            <hr class="form-hr">
+
+            <div class="checkbox-option">
+                <label><input type="checkbox" name="remember">&nbsp;&nbsp;Keep me logged in</label>
+            </div>
+            <hr>
+            
+            <div class="form-action-btn">
+                <button type="button" class="form-secondary-btn" onclick="closeModal('loginModal')">Cancel</button>
+                <button type="submit" class="form-primary-btn" onclick="logIn(
+          this.form.email.value,
+          this.form.password.value
+        )">Log in</button>
+            </div>
+
+            <hr class="form-hr">
+
+            <div class="form-tertiary-options">
+                <button class="form-tertiary-btn">Forgot password?</button>
+                <button class="form-tertiary-btn" onclick="closeModal('loginModal'); openModal('signupModal');">Create Verve Account ↗</button>
+
+            </div>
+        </div>
+    </form>
+     </div>
+<script src="auth.js"></script>
+
+    </body>
+</html>

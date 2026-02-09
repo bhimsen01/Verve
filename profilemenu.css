@@ -1,0 +1,141 @@
+.profilepopup{
+    user-select: none;
+    letter-spacing: 0.2px;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    position: fixed;
+    top: 16%;
+    right: 16%;
+    width: fit-content;
+    border-radius: 24px;
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.3);
+    padding: 8px 0 8px 0;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.profilepopup-user{
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 8px 8px 8px;
+    padding: 8px 16px 8px 16px;
+}
+
+.profilepopup-user:hover{
+    background-color: rgba(200, 200, 200, 0.4);
+    cursor: pointer;
+}
+
+#profilepopup-user-name{
+    margin: 0;
+}
+
+#profilepopup-user-email{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.profilepopup hr{
+    border: 0;
+    background-color: rgb(0, 0, 0, 0.2);
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.profilepopup-events{
+    display: flex;
+    flex-direction: column;
+}
+
+#profilepopup-events1{
+    border-radius: 16px;
+    margin: 8px 8px 0px 8px;
+    padding: 8px 16px 8px 16px;
+}
+#profilepopup-events2{
+    border-radius: 16px;
+    margin: 0px 8px 8px 8px;
+    padding: 8px 16px 8px 16px;
+}
+
+#profilepopup-events1:hover, #profilepopup-events2:hover{
+    background-color: rgba(200, 200, 200, 0.4);
+    cursor: pointer;
+}
+
+.profilepopup-settings{
+    display: flex;
+    flex-direction: column;
+}
+
+.profilepopup-settings p{
+    border-radius: 16px;
+    margin: 8px 8px 8px 8px;
+    padding: 8px 16px 8px 16px;
+}
+
+.profilepopup-settings p:hover{
+    background-color: rgba(200, 200, 200, 0.4);
+    cursor: pointer;
+}
+
+.profilepopup-theme{
+    display: flex;
+    flex-direction: column;
+}
+.profilepopup-theme p{
+    border-radius: 16px;
+    margin: 8px 8px 8px 8px;
+    padding: 8px 16px 8px 16px;
+}
+.profilepopup-theme p:hover{
+    background-color: rgba(200, 200, 200, 0.4);
+    cursor: pointer;
+}
+
+.profilepopup-misc{
+    display: flex;
+    flex-direction: column;
+}
+#profilepopup-misc1{
+    border-radius: 16px;
+    margin: 8px 8px 0px 8px;
+    padding: 8px 16px 8px 16px;
+}
+
+#profilepopup-misc2{
+    border-radius: 16px;
+    margin: 0px 8px 0px 8px;
+    padding: 8px 16px 8px 16px;
+}
+
+
+#profilepopup-misc3{
+    border-radius: 16px;
+    margin: 0px 8px 8px 8px;
+    padding: 8px 16px 8px 16px;
+}
+#profilepopup-misc1:hover, #profilepopup-misc2:hover, #profilepopup-misc3:hover{
+    background-color: rgba(200, 200, 200, 0.4);
+    cursor: pointer;
+}
+
+.profilepopup-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 24px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.profilepopup-footer p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-menu</title>
+    <link rel="stylesheet" href="profilemenu.css">
+    <style>
+        .modal{
+            display: none; 
+            position: fixed; 
+            z-index: 4; 
+            right: 0;
+            top: 0;
+            width: 100vw; 
+            height: 100vh; 
+            overflow: auto; 
+            background: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <!-- Profile Popup Menu -->
+    <div id="profilepopupModal" class="modal">
+        <div class="profilepopup">
+        <div class="profilepopup-user" onclick="window.location.href='settings.html'">
+            <p id="profilepopup-user-name">Bhimsen</p>
+            <p id="profilepopup-user-email">bhimsen.basnets24@cps.edu.np</p>
+        </div>
+        <hr>
+        <div class="profilepopup-events">
+            <p id="profilepopup-events1" onclick="window.location.href='dashboard.html'">My Events</p>
+            <p id="profilepopup-events2" onclick="window.location.href='dashboard.html'">My Workshops</p>
+        </div>
+        <hr>
+        <div class="profilepopup-settings">
+            <p onclick="window.location.href='settings.html'">Settings</p>
+        </div>
+        <hr>
+        <div class="profilepopup-theme">
+            <p>Theme</p>
+        </div>
+        <hr>
+        <div class="profilepopup-misc">
+            <p id="profilepopup-misc1" onclick="window.location.href='support.html'">Support</p>
+            <p id="profilepopup-misc2" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=example@example.com&su=Contact%20Us&body=Hello,%20I%20would%20like%20to%20contact%20you%20regarding...', '_blank')">Contact</p>
+            <p id="profilepopup-misc3" onclick="window.location.href='landing.html'">Log out</p>
+        </div>
+        <hr>
+        <div class="profilepopup-footer">
+            <p>Privacy</p>
+            <p>Terms</p>
+            <p>Copyright</p>
+        </div>
+    </div>
+</body>
+</html>

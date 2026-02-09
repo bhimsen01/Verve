@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Workshops - Verve</title>
+  <link rel="icon" href="circle_icon.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="profilemenu.css">
+
+  <script src="profilemodal.js"></script>
+
+  <style>
+        .modal{
+            display: none; 
+            position: fixed; 
+            z-index: 4; 
+            right: 0;
+            top: 0;
+            width: 100vw; 
+            height: 100vh; 
+            overflow: auto; 
+            background: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body onload="loadMyData()">
+
+<!-- navgation bar -->
+    <nav>
+        <div class="logo-and-name">
+            <img id="logo-img" src="nobg_logo_purple-blue.png">
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn secondary-btn" onclick="window.location.href='homepage.html'">Home</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='event.html'">Event</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='workshop.html'">Workshop</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='gallery.html'">Gallery</button>
+            <button class="nav-btn secondary-btn" onclick="window.location.href='community.html'">Community</button>
+            <button class="nav-btn secondary-btn" onclick="">Search</button>
+            <button class="nav-btn secondary-btn" onclick="openModal('profilepopupModal')">Profile</button>
+        </div>
+    </nav>
+
+<div class="main">
+  <div class="workshop">
+    <h1>My workshops</h1>
+    <div class="card-grid" id="myWorkshops"></div>
+
+
+    <!-- <h1>My Events</h1>
+    <div class="card-grid" id="myEvents"></div> -->
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>

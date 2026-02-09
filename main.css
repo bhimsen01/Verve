@@ -1,0 +1,787 @@
+:root{
+    /* font size */
+    --base-font-size: 16px;
+
+    /* colors */
+    --blue: rgb(0, 136, 255);
+    --red: rgb(255,56,60);
+    --bg-grey: rgb(245, 245, 247);
+    --white: rgb(255, 255, 255);
+    --text-black: rgb(29, 29, 31);
+    --text-grey-dark: rgb(116, 116, 121);
+    --text-grey-light: rgb(142, 142, 147);
+    --secondary-btn-bg: rgba(232, 232, 232, 0.8);
+    --secondary-btn-hover: rgba(200, 200, 200, 0.8);
+    --primary-btn-bg: rgba(0, 0, 0, 0.8);
+    --primary-btn-hover: rgba(20, 20, 20, 0.8);
+    --primary-delete-btn-hover: rgb(233, 21, 45);
+
+    /* spacing */
+    --spacing-small: 12px;
+    --spacing-normal: 16px;
+    --spacing-medium: 24px;
+    --spacing-large: 32px;
+    --spacing-xlarge: 100px;
+    --spacing-xlarge-top: 160px;
+
+    /* border radius */
+    --primary-card-radius: 24px;
+    --secondary-card-radus: 12px;
+    --circle-radius: 100%;
+    --semi-circle-radius: 9999px;
+
+    /* border */
+    --border-light: 1px solid rgba(255, 255, 255, 0.8);
+    
+    /* box shadow */
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --box-shadow-heavy: 0 8px 32px rgba(31, 38, 135, 0.2);
+    --box-shadow-inset: inset 0 4px 20px rgba(255, 255, 255, 0.3);
+
+    /* backdop filter */
+    --backdrop-blur: blur(8px) saturate(180%);
+
+    /* box shadow */
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --box-shadow-heavy: 0 8px 32px rgba(31, 38, 135, 0.2);
+    --box-shadow-inset: inset 0 4px 20px rgba(255, 255, 255, 0.3);
+
+    /* card hover */
+    --card-hover-scale: scale(1.02);
+    --img-hover-scale: scale(1.05);
+}
+
+/* dark mode */
+body.dark-mode {
+    background-color: rgb(0, 0, 0);
+    --blue: rgb(0, 145, 255);
+    --red: rgb(255,66,69);
+    --bg-grey: rgb(29, 29, 31);
+    --white: rgb(245, 245, 247);
+    --text-black: rgb(245, 245, 247);
+    --text-grey-dark: rgb(174, 174, 178);
+    --text-grey-light: rgb(200, 200, 205);
+    --secondary-btn-bg: rgba(245, 245, 247, 0.8);
+    --secondary-btn-hover: rgba(225, 225, 227, 0.8);
+    --primary-btn-bg: rgba(29, 29, 31, 0.8);
+    --primary-btn-hover: rgba(49, 49, 51, 0.8);
+    --primary-delete-btn-hover: rgb(255, 97, 101);
+}
+
+
+
+/* global body */
+body{
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: var(--text-black);
+}
+
+
+
+/* navigation bar */
+nav{
+    width: max-content;
+    display: flex;
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-light);
+    border-radius: var(--semi-circle-radius);
+    box-shadow: var(--box-shadow-heavy);
+    padding: var(--spacing-normal) var(--spacing-medium);
+    align-items: center;
+    gap: var(--spacing-normal);
+    justify-content: space-between;
+    position: fixed;
+    z-index: 4;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* logo and name */
+.logo-and-name{
+    display: flex;
+    align-items: center;
+    height: 36px;
+    gap: var(--spacing-normal);
+}
+
+#logo-img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* navgation menu */
+.navigation{
+    display: flex;
+    gap: var(--spacing-normal);
+}
+
+.nav-btn{
+    font-size: 17px;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: var(--spacing-normal) var(--spacing-medium);
+    font-weight: 500;
+    border-radius:var(--semi-circle-radius);
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-light);
+    box-shadow: var(--box-shadow-light);
+}
+
+.nav-btn.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.nav-btn.active:hover {
+  background-color: rgb(3, 110, 224); 
+  color: var(--white);
+}
+
+.primary-btn{
+    background-color: var(--primary-btn-bg);
+    box-shadow: var(--box-shadow-heavy);
+    color: var(--white);
+}
+
+.primary-btn:hover{
+    background-color: var(--primary-btn-hover);
+    cursor: pointer;
+}
+
+.primary-delete-btn{
+    background-color: var(--red);
+    box-shadow: var(--box-shadow-heavy);
+    color: var(--white);
+}
+
+.primary-delete-btn:hover{
+    background-color: var(--primary-delete-btn-hover);
+}
+
+.secondary-btn{
+    background-color: var(--secondary-btn-bg);
+    box-shadow: var(--box-shadow-light);
+}
+
+.secondary-btn:hover{
+    background-color: var(--secondary-btn-hover);
+    cursor: pointer;
+}
+
+
+/* main content */
+.main{
+    margin: auto;
+    width: 80%;
+}
+
+
+/* descrpton section*/
+.desc{
+    text-align: center;
+    margin: var(--spacing-xlarge-top) 0 var(--spacing-large) 0;
+}
+
+.slogan{
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.slogan-sub{
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+
+/* guide section */
+.guide{
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guide-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 320px;
+    background-color: var(--bg-grey);
+    border-radius: var(--spacing-medium);
+    padding: var(--spacing-normal) var(--spacing-xlarge);
+    transition: transform 0.3s ease;
+}
+
+.guide-card:hover{
+    transform: var(--card-hover-scale);
+}
+
+.grid-card-heading{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-tertiary-btn{
+    border: 0;
+    margin: 0;
+    padding-left: 2px;
+    background: none;
+    color: var(--blue);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.card-tertiary-btn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.guide-card-img{
+    height: 280px;
+    background-color: var(--white);
+    width: 360px;
+    border-radius: var(--secondary-card-radus);
+}
+
+.card-body-text{
+    color: var(--text-grey-dark);
+}
+
+
+/* explore section */
+.section-heading-large{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.highlight{
+    border-radius: var(--primary-card-radius);
+    transition: transform 0.3s ease;
+}
+
+.highlight:hover{
+    transform: var(--card-hover-scale);
+}
+
+.highlight-img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* be a member section */
+.beamember{
+    width: 100%;
+    margin: var(--spacing-xlarge) 0;
+}
+
+.beamember-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-grey);
+    border-radius: var(--primary-card-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: var(--spacing-normal) var(--spacing-xlarge);
+}
+
+.beamember-card:hover{
+    transform: var(--card-hover-scale);
+}
+
+.beamember-card-left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.beamember-card-heading{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.beamember-card-right{
+    margin: 0;
+    width: 50%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.beamember-card-img{
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* footer */
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-grey);
+    color: var(--text-grey-dark);
+    padding: var(--spacing-normal);
+}
+
+.footer-section{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-heading-small{
+    color: var(--text-black);
+    font-weight: bold;
+}
+
+#x-icon{
+    margin: 0;
+    padding: 0;
+    height: 32px;
+}
+
+#x-icon:hover{
+    cursor: pointer;
+}
+
+.footer-hr{
+    width: 80%;
+    border: 0;
+    height: 1px;
+    background-color: var(--text-grey-dark);
+}
+
+.footer-down-left{
+    display: flex;
+    gap: var(--spacing-large);
+}
+
+.footer-link{
+    text-decoration: none;
+    color: var(--text-grey-dark);
+}
+
+.footer-link:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+/* common attributes */
+.section-heading-medium{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.2rem;
+    margin-bottom: var(--spacing-large);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-grey);
+    border-radius: var(--primary-card-radius);
+    overflow: hidden;
+    padding: var(--spacing-normal);
+}
+
+.card-body-img{
+    width: 100%;
+    height: 200px;
+    border-radius: var(--spacing-small);
+    overflow: hidden;
+}
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-img:hover{
+    transform: var(--img-hover-scale);
+    cursor: pointer;
+}
+
+.card-body-heading{
+    margin: 1em 0 0 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-body-text{
+    margin: 0.5em 0 0.5em 0;
+}
+
+.event, .workshop, .community, .gallery{
+    margin: var(--spacing-xlarge-top) 0 var(--spacing-xlarge) 0;
+}
+
+.gallery-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1.2rem;
+    margin-bottom: var(--spacing-large);
+}
+
+.gallery-card{
+    height: 12rem;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+
+/* communty and posts */
+.post {
+    background: var(--bg-grey);
+    padding: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    border-radius: 16px;
+    display: flex;
+    gap: var(--spacing-medium);
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: scale(1.01);
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--circle-radius);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-grey-dark);
+}
+
+.post-text {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-small);
+}
+
+.vote-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+
+.vote-btn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 20px;
+    transition: 0.2s;
+    color: var(--text-grey-dark);
+}
+
+.vote-btn:hover {
+    transform: scale(1.2);
+    color: var(--text-grey-light)
+}
+
+/* Post Box */
+.post-div{
+    position:sticky;
+    bottom: 3%;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+}
+
+
+.post-box {
+    width: 60%;
+    position: fixed;
+    bottom: 3%;
+    padding: 16px;
+    backdrop-filter: var(--backdrop-blur);
+    background-color: rgb(164, 164, 164, 0.8);
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-light);
+    box-shadow: var(--box-shadow-heavy) var(--box-shadow-inset);
+    border-radius: 16px;
+}
+
+body.dark-mode .post-box{
+    background-color: rgba(44, 44, 46, 0.8);
+}
+
+.post-box textarea{
+    letter-spacing: 0.2px;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    width: 98%;
+    min-height: 80px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: rgba(232, 232, 232, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    resize: none;
+}
+
+body.dark-mode .post-box textarea{
+    background-color: rgba(28, 28, 30, 0.8);
+    color: var(--white);
+}
+
+.char-counter {
+    font-size: 12px;
+    color: var(--text-grey-light);
+    text-align: right;
+    margin-top: 4px;
+}
+
+.post-box button {
+    letter-spacing: 0.2px;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 16px 24px 16px 24px;
+    border: none;
+    border-radius: var(--semi-circle-radius);
+    border: var(--border-light);
+    background-color: var(--blue);
+    backdrop-filter: blur(8px) saturate(180%);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+.post-box button:hover {
+    background-color: rgba(3, 110, 244);
+}
+
+/* Empty State */
+.empty-message {
+    text-align: center;
+    color: rgb(136, 136, 136);
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+
+
+@media (max-width: 600px) {
+    .main{
+        width: 90%;
+    }
+
+    nav{
+        top: 88%;
+        width: 90%;
+        padding: 12px;
+        gap: var(--spacing-small);
+        overflow: auto;
+    }
+
+    .navigation{
+        gap: 8px;
+        overflow: auto;
+
+    }
+    .navigation .nav-btn{
+        padding: 16px;
+    }
+    .desc{
+        margin-top: 24px;
+    }
+
+    .event, .workshop, .gallery, .community{
+        margin-top: 24px;
+    }
+    .slogan{
+        font-size: 2rem;
+    }
+    .slogan-sub{
+        font-size: 1.2rem;
+    }
+
+    .section-heading-medium{
+        font-size: 1.5rem;
+    }
+
+    .logo-and-name{
+        display: none;
+    }
+
+
+
+    .card-grid{
+        grid-template-columns: auto;
+    }
+
+    .footer-section{
+        width: 90%;
+        font-size: 10px;
+    }
+
+    .footer-hr{
+        width: 90%;
+    }
+
+    .post-box{
+        bottom: 13%;
+        width: 82%;
+        padding: 12px;
+    }
+    .post-box textarea{
+        width: 94%;
+        height: 10px;
+    }
+
+    .beamember-card{
+        flex-direction: column;
+        padding: var(--spacing-medium);
+    }
+    .beamember-card-heading{
+        font-size: 1.5rem;
+    }
+    .beamember-card-left, .beamember-card-right{
+        width: 100%;
+        align-items: center;
+    }
+
+    .gallery-grid{
+        grid-template-columns: auto auto;
+        gap: 8px;
+    }
+    .gallery-card{
+        height: 128px;
+        border-radius: var(--spacing-small);
+    }
+
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .main{
+        width: 90%;
+    }
+
+    nav{
+        justify-content: space-between;
+        top: 88%;
+        width: 90%;
+        padding: 12px;
+        gap: var(--spacing-small);
+        overflow: auto;
+    }
+
+    .navigation{
+        overflow: auto;
+    }
+    .navigation .nav-btn{
+        padding: 16px;
+    }
+    .desc{
+        margin-top: 24px;
+    }
+
+    .event, .workshop, .gallery, .community{
+        margin-top: 24px;
+    }
+    .slogan{
+        font-size: 2rem;
+    }
+    .slogan-sub{
+        font-size: 1.2rem;
+    }
+
+    .section-heading-medium{
+        font-size: 1.5rem;
+    }
+
+    .logo-and-name{
+        display: none;
+    }
+
+
+
+    .card-grid{
+        grid-template-columns: auto auto;
+    }
+
+    .footer-section{
+        width: 90%;
+        font-size: 12px;
+    }
+
+    .footer-hr{
+        width: 90%;
+    }
+
+    .post-box{
+        bottom: 13%;
+        width: 82%;
+        padding: 12px;
+    }
+    .post-box textarea{
+        width: 94%;
+        height: 10px;
+    }
+
+    .beamember-card{
+        flex-direction: column;
+        padding: var(--spacing-medium);
+    }
+    .beamember-card-heading{
+        font-size: 1.5rem;
+    }
+    .beamember-card-left, .beamember-card-right{
+        width: 100%;
+        align-items: center;
+    }
+
+    .gallery-grid{
+        grid-template-columns: auto auto;
+        gap: 8px;
+    }
+    .gallery-card{
+        height: 100%;
+        border-radius: var(--spacing-small);
+    }
+}
+
+
